@@ -14,14 +14,12 @@ public class Program2 {
 		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
 
 		System.out.println("==== TEST 1: findById ====");
-		Department dep = departmentDao.findById(1);
+		Department dep = departmentDao.findById(4);
 		System.out.println(dep);
 		
 		System.out.println("\n==== TEST 2: findAll ====");
 		List<Department> list = departmentDao.findAll();
-		for (Department d : list){
-			System.out.println(d);
-		}
+		list.forEach(System.out::println);
 
 		System.out.println("\n==== TEST 3: insert ====");
 		Department newDepartment = new Department(null, "Music");
